@@ -1,0 +1,50 @@
+# Exclude Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Environment files (keep requirements.txt)
+.env
+.env.*
+
+# Git
+.git
+.gitignore
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDEs
+.vscode/
+.idea/
+
+# Test / typecheck caches
+.pytest_cache/
+.mypy_cache/
+.tox/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+tmp/
+temp/
+*.tmp
+
+# Generated reports (keep source Excel out of image)
+*.xlsx
+
+# Docker compose local override
+docker-compose.override.yml

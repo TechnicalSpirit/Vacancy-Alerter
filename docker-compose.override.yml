@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    image: vacancy-notifier:latest
+    env_file:
+      - .env
+    volumes:
+      - ./:/app:rw
+      - ./tmp:/app/tmp:rw
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["python", "-u", "main.py"]
+    restart: "no"

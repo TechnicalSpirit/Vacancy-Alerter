@@ -1,0 +1,46 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual envs
+venv/
+env/
+.venv/
+ENV/
+
+# distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDEs
+.vscode/
+.idea/
+
+# dotenv
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# temp
+tmp/
+temp/
+*.tmp
+
+# tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# pandas/excel temp
+*.xlsx
+
+# mypy
+.mypy_cache/
+
+# logs
+*.log
