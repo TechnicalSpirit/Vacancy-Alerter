@@ -15,7 +15,25 @@ class HHClient:
         response.raise_for_status()
         return response.json()
 
-    def search_vacancies_by_parameters(self, params:dict):
-        response = self.session.get(f"{self.BASE_URL}/vacancies", params=params)
-        response.raise_for_status()
-        return response.json()
+    def search_vacancies_by_parameters(self, params: dict):
+        all_vacancies = []
+        page = 0
+
+        while True:
+            params.update({
+                "page": page,
+                "per_page": 100  # максимум
+            })
+
+            response = self.session.get(f"{self.BASE_URL}/vacancies", params=params)
+            response.raise_for_status()
+            data = response.json()
+
+            all_vacancies.extend(data["items"])
+
+            if page >= data["pages"] - 1:
+                break
+
+            page += 1
+
+        return all_vacancies

@@ -23,7 +23,7 @@ yesterday_end = yesterday_start.replace(
 )
 
 hh = HHClient()
-respons = hh.search_vacancies_by_parameters(
+all_vacancies_by_parameters = hh.search_vacancies_by_parameters(
     {
         "schedule": "remote",
         "date_from": yesterday_start.isoformat(),
@@ -33,7 +33,7 @@ respons = hh.search_vacancies_by_parameters(
 
 standardizer = VacancieByTemplate()
 standart_vacancies = []
-for vacancie in respons["items"]:
+for vacancie in all_vacancies_by_parameters:
     standart_vacancie = standardizer.standardized_hh_vacancie_by_template(vacancie)
     standart_vacancies.append(standart_vacancie)
 
